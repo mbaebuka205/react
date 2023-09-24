@@ -1,173 +1,99 @@
-import react,{useState, useEffect} from 'react'
 import styled from 'styled-components'
-import pix from '../../assets/Membership_Coco.png'
-import pix1 from '../../assets/Membership_Lowry.png'
-import pix2 from '../../assets/Membership_Molina-1.png'
-import pix3 from '../../assets/download-removebg-preview (9).png'
-import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
-import {HiOutlineArrowNarrowLeft} from 'react-icons/hi'
+import {GoPerson} from 'react-icons/go'
+import {BsEnvelopeDash} from 'react-icons/bs'
+import {BsFacebook} from 'react-icons/bs'
+import {AiFillInstagram, AiFillTwitterCircle, AiFillLinkedin} from 'react-icons/ai'
 
-
-interface iData {
-    img?:string,
-    name:any,
-    text:string
-}
 const Medium = () =>{
-    const [number, setNumber] = useState(0)
-    const [slide, setSlide] = useState<Array<iData>>([
-        {text:"I love Medium’s membership — it gives me access to the stories I love by the writers I love, and it allows me to help support those writers financially.",name:"JESSICA", img:pix2},
-        {text:"For me, the access to a variety of ideas and perspectives is invaluable. Medium brings people from all over into one shared space where we can grow and learn together.",name:"AHMED", img:pix1},
-        {text:"My favorite thing about a Medium membership is endlessly reading up-and-coming and well-known writers alike.",name:"ISAAC", img:pix}
-    ])
-    const incr = () =>{
-        setNumber((el:number)=>{
-            return el + 1
-        })
-    }
-    const dcr = () =>{
-        setNumber((el:number)=>{
-            return el - 1
-        })
-    }
 
-    useEffect(()=>{
-       setInterval(()=>{
-        setNumber((el:number)=>{
-            return el + 1
-        })
-       },3000)
-    },[])
    return(
     <div>
-      <Container>
-        <span>Why I'm A Medium Member</span>
-        <Wrapper>
-           <Left>
-            <Circle1 src={slide[number% slide.length].img}/>
-            <Circle2/>
-            <Circle3/>
-           </Left>
-           <Right>{slide[number% slide.length].text}
-            <Name>{slide[number% slide.length].name}</Name>
-           </Right>
-        </Wrapper>
-        <Dbtm>
-           <L onClick={dcr}><HiOutlineArrowNarrowLeft/></L>
-           <R onClick={incr}><HiOutlineArrowNarrowRight/></R>
-        </Dbtm>
-      </Container>
-      <Footer>
-        <Lside><img src={pix3}/></Lside>
-        <p style={{fontSize:"20px"}}>Every Idea Needs A Medium</p>
-        <Rside>
-           <nav>About</nav>
-           <nav>Terms</nav> 
-           <nav>Privacy</nav> 
-           <nav>Help</nav> 
-           <nav>Team</nav> 
-        </Rside>
-      </Footer>
+     <Container>
+        <Whtin>
+            <h1>SuperCharge Your<br/> Mobile Life With <span>Hashit</span></h1>
+            <Divs>
+                <Icon>
+                   <GoPerson/>
+                </Icon>
+                <p>Full Name</p>
+            </Divs>
+            <Divs>               
+                 <Icon>
+                   <BsEnvelopeDash/>
+                </Icon>
+                <p>Email Address</p></Divs>  
+            <Divs1><p>Get Notified When Hashit is live</p></Divs1>
+            <Imgs>
+              <BsFacebook/>
+              <AiFillInstagram/>
+              <AiFillTwitterCircle/>
+              <AiFillLinkedin/>
+            </Imgs>
+        </Whtin>
+     </Container>
     </div>
    )
 }
 export default Medium;
-const Rside = styled.div`
-width:250px;
+const Icon = styled.div`
+font-size:100%
+`
+const Imgs = styled.div`
+width:40%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-margin-right:12px
-`
-const Lside = styled.div`
-height:30px;
-width:170px;
-img{
-  height:100%;
-  width:100%;
+font-size:29px;
+@media (max-width:500px){
+  width:50%;
 }
-margin-left:12px;
-margin-top:18px;
 `
-const Footer = styled.div`
-width:100%;
-height:65px;
-background-color:pink;
+const Divs1 = styled.div`
+width:60%;
+color:white;
+background-color:black;
+border:1px solid black;
+text-align:center;
+@media (max-width:500px){
+  width:85%;
+}
+`
+const Divs = styled.div`
+height:40px;
+width:60%;
+border:1px solid black;
 display:flex;
-justify-content:space-between;
-align-item:center;
-`
-const R = styled.div`
-width:30%;
-height:100%;
-font-size:27px;
-`
-const L = styled.div`
-width:30%;
-height:100%;
-font-size:27px;
-`
-const Dbtm = styled.div`
-height:30px;
-width:100px;
-display:flex;
-justify-content:space-between;
-`
-const Circle3 = styled.div`
-height:135px;
-width:30px;
-border-radius:50%;
-background-color:green;
-`
-const Circle2 = styled.div`
-height:145px;
-width:70px;
-border-radius:50%;
-background-color:orange;
-`
-const Circle1 = styled.img`
-height:150px;
-width:150px;
-border-radius:50%;
-background-color:orange;
-`
-const Name = styled.div`
-height:20px;
-width:70px;
-position:absolute;
-top:200px;
-left:30px;
-`
-const Right = styled.div`
-height:100%;
-width:66%;
-position:relative;
-font-size:25px;
-transition:all ease-in-out 350ms;
-margin-left:30px
-`
-const Left = styled.div`
-height:100%;
-width:34%;
-display:flex;
-justify-content:space-between;
 align-items:center;
+color:gray;
+@media (max-width:500px){
+  width:85%;
+}
 `
-const Wrapper = styled.div`
-width:62%;
-height:230px;
+const Whtin = styled.div`
+height:450px;
+width:59%;
 display:flex;
+justify-content:space-between;
+flex-direction:column;
+align-items:center;
+h1{
+    font-size:30px;
+    text-align:center
+  };
+  span{
+    color:orangered
+  };
+  @media(max-width:768px){
+    width:100%;
+  };
+  @media(max-width:500px){
+    width:100%;
+  }
 `
 const Container = styled.div`
-height:400px;
+height:600px;
 width:100%;
 background-color:white;
 display:flex;
-flex-direction:column;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
-span{
-    font-size:38px;
-    font-weight:bold;
-  }
 `

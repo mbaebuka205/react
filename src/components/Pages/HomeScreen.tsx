@@ -1,4 +1,3 @@
-import react from "react"
 import Hero from "./Hero";
 import Medium from "./Medium";
 

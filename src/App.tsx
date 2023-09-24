@@ -1,4 +1,3 @@
-import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import {MainRouter} from './components/Router/MainRouter'
 const App = () => {

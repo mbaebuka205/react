@@ -7,8 +7,8 @@ const Header = () =>{
     <div>
        <Container>
         <Wrapper>
-        <Left><img src={pix}/></Left>
-        <Right><img src = {pix2}/></Right>
+        <Left><img src={pix} alt=''/></Left>
+        <Right><img src = {pix2} alt=''/></Right>
         </Wrapper>
        </Container>
     </div>

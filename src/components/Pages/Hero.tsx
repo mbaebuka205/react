@@ -7,7 +7,7 @@ const Hero = () =>{
        <Container>
         <Wrapper>
          <Dtop><h1>SuperCharge Your Mobile Life With <span>Hashit</span></h1></Dtop>
-         <Dbottom><img src={pix}/></Dbottom>
+         <Dbottom><img src={pix} alt=''/></Dbottom>
          <Dlast><p>Level up your mobile experience with Hashit! Send money, buy airtime, pay utilities, save, earn, learn, connect with friends, explore our vibrant marketplace, advertise your biz, and win exciting giveaways - all in one place.
 Join the waitl
 </p></Dlast>
